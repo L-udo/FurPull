@@ -15,7 +15,7 @@ you can find it at: https://chromedriver.chromium.org/
 
 You may have to create a folder within furpull called "img_out"
 
-You may have to ajust waiting time to allow selenium to load page in time
+You may have to adjust waiting time to allow selenium to load page in time
 
 
 Running:
