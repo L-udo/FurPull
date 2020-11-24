@@ -16,7 +16,7 @@ def image_discov():
     #collecting imformation needed to start scraping
     x = 0
     a = open("Unfiltered_Output.txt", "a")
-    print("Chrome Driver (may or may not work with Firefox but is untested):")
+    print("Chrome Driver path (may or may not work with Firefox but is untested):")
 
     cd = input("░▒▓█OWO█▓▒░:")
 
