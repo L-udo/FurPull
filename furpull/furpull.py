@@ -9,7 +9,7 @@ import os
 
 # CODE WRITTEN AND COMPILED BY LUDO you can find me on instagram at @ludo_the_wusky or on Twitter @Ludo_Dash
 
-#image downloading stage
+#setup
 
 
 def image_discov():
@@ -90,7 +90,7 @@ def image_discov():
 
 
 
-    #starting search
+    #start Scraping image urls
     x = 0
     g = 0
     if f == "":
@@ -123,7 +123,7 @@ def image_discov():
 image_discov()
 
 
-#filtering urls found, output to file and download images
+#filtering urls down to just the post urls
 def filter_and_output():
     print("Filtering Output...")
 
@@ -143,7 +143,7 @@ def filter_and_output():
     urls = open('output.txt')
     print("downloading images")
 
-
+    #downloading Images
     x = 0
     path = os.getcwd()
     for lines in urls:
