@@ -13,6 +13,8 @@ USAGE:
 Download Latest Chrome driver
 you can find it at: https://chromedriver.chromium.org/
 
+!(I have included a working current chromedriver prepackaged with Furpull for windows 10)!
+
 You may have to create a folder within furpull called "img_out"
 
 You may have to adjust waiting time to allow selenium to load page in time
