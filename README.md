@@ -22,6 +22,8 @@ You may have to adjust waiting time to allow selenium to load page in time
 
 Running:
 
+Make a folder called img_out in main folder
+
 Run furpull.py with python 2.7
 
 Provide furpull with Chromedriver path
