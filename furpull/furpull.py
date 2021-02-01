@@ -7,7 +7,7 @@ import random
 import requests
 import os
 
-# CODE WRITTEN AND COMPILED BY LUDO you can find me on instagram at @ludo_the_wusky or on Twitter @Ludo_Dash
+# CODE WRITTEN AND COMPILED BY LUDO you can find me on instagram at @ludo_the_wusky or on Twitter 
 
 #setup
 
