@@ -10,15 +10,24 @@ import os
 # CODE WRITTEN AND COMPILED BY LUDO you can find me on instagram at @ludo_the_wusky or on Twitter 
 
 #setup
+path = os.getcwd()
+print("Checking requirements!")
+try:
+    open(path + "\img_out/" + "placeholder.txt", "wb")
+
+except:
+    print("An Error Occored when trying to open the folder 'img_out'... Are you sure you created the folder within the CWD?")
+    exit()
+
+print("Checks PASSED!")
 
 
 def image_discov():
     #collecting imformation needed to start scraping
     x = 0
     a = open("Unfiltered_Output.txt", "a")
-    print("Chrome Driver path (may or may not work with Firefox but is untested):")
 
-    cd = input("░▒▓█OWO█▓▒░:")
+    cd = os.getcwd() + "/" + "chromedriver.exe"
 
     while x < 40:
         x = x + 1
