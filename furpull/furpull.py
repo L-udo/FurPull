@@ -24,11 +24,10 @@ print("Checks PASSED!")
 
 def image_discov():
     #collecting imformation needed to start scraping
-    x = 0
     a = open("Unfiltered_Output.txt", "a")
 
     cd = os.getcwd() + "/" + "chromedriver.exe"
-
+    x = 0
     while x < 40:
         x = x + 1
         print("\n")
@@ -53,7 +52,7 @@ def image_discov():
 
     print("Time delay for loading page(3 seconds for moderate internet speeds, higher if your internet is slower)")
 
-    t = int(input("░▒▓█OWO█▓▒░:"))
+    time_delay = int(input("░▒▓█OWO█▓▒░:"))
 
     while x < 40:
         x = x + 1
@@ -122,7 +121,7 @@ def image_discov():
                 a.write(imag + "\n")
             except:
                 pass
-        time.sleep(t)
+        time.sleep(time_delay)
 
         nex_page = driver.find_element_by_name("next_page")
         nex_page.click()
