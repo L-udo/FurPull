@@ -25,7 +25,7 @@ print("Checks PASSED!")
 def image_discov():
     #collecting imformation needed to start scraping
     x = 0
-    a = open("Unfiltered_Output.txt", "a")
+    output_file = open("Unfiltered_Output.txt", "a")
 
     cd = os.getcwd() + "/" + "chromedriver.exe"
 
@@ -36,7 +36,7 @@ def image_discov():
 
     print("How many pages deep to scrape(Normally 63. only change number to be higher if furafinity updates/changes it)(Hit Enter for default)")
 
-    f = input("░▒▓█OWO█▓▒░:")
+    Num_of_pages = input("░▒▓█OWO█▓▒░:")
 
     while x < 40:
         x = x + 1
@@ -53,7 +53,7 @@ def image_discov():
 
     print("Time delay for loading page(3 seconds for moderate internet speeds, higher if your internet is slower)")
 
-    t = int(input("░▒▓█OWO█▓▒░:"))
+    web_delay_load = int(input("░▒▓█OWO█▓▒░:"))
 
     while x < 40:
         x = x + 1
@@ -99,19 +99,16 @@ def image_discov():
 
 
 
-    #start Scraping image urls
+    #set default page number value
+    if Num_of_pages == "":
+        Num_of_pages = 63
+
+    #start Scraping image urls sequentially
     x = 0
-    g = 0
-    if f == "":
-        g = 63
-    else:
-        g = f
-
-
-    while x < int(g):
+    while x < int(Num_of_pages):
         x = x + 1
         wrn_msg()
-        print("page", x , "/"+ str(g) )
+        print("page", x , "/"+ str(Num_of_pages) )
         try:
             images = driver.find_elements_by_tag_name('img')
         except:
@@ -119,13 +116,13 @@ def image_discov():
         for image in images:
             try:
                 imag = image.get_attribute('src')
-                a.write(imag + "\n")
+                output_file.write(imag + "\n")
             except:
                 pass
-        time.sleep(t)
+        time.sleep(web_delay_load)
 
-        nex_page = driver.find_element_by_name("next_page")
-        nex_page.click()
+        next_page = driver.find_element_by_name("next_page")
+        next_page.click()
 
     driver.close()
 
