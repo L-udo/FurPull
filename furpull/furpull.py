@@ -116,6 +116,9 @@ def image_discov():
         for image in images:
             try:
                 imag = image.get_attribute('src')
+                imag = imag.replace("@100-","@400-")
+                imag = imag.replace("@200-","@400-")
+                imag = imag.replace("@300-","@400-")
                 output_file.write(imag + "\n")
             except:
                 pass
@@ -126,23 +129,25 @@ def image_discov():
 
     driver.close()
 
-image_discov()
-
 
 #filtering urls down to just the post urls
 def filter_and_output():
     print("Filtering Output...")
 
-    open('output.txt','w').writelines(line for line in open('Unfiltered_Output.txt') if "https://t.facdn.net/" in line)
+    open('output.txt','w').writelines(line for line in open('Unfiltered_Output.txt') if "https://t.furaffinity.net/" in line)
 
     print("Done!")
 
 
     def file_lengthy(fname):
-            with open(fname) as f:
-                    for i, l in enumerate(f):
-                            pass
-            return i + 1
+        file = open(fname, "r")
+        image_count = 0
+        for line in file:
+            if line != "\n":
+                image_count += 1
+        file.close()
+        return image_count
+
     print("Number of Images Found: ",file_lengthy("output.txt"))
     f_len = file_lengthy("output.txt")
 
@@ -155,7 +160,7 @@ def filter_and_output():
     for lines in urls:
         x = x + 1
         img = requests.get(lines.strip('\n'))
-        img_name = "image" + str(x) + ".png"
+        img_name = "image" + str(x) + ".jpg"
         file = open( path + "\img_out/" + img_name, "wb")
         file.write(img.content)
         file.close()
@@ -203,4 +208,35 @@ def filter_and_output():
 
     print("DONE!")
 
-filter_and_output()
+selection = input("do you want to scan for images or download from a list? DOWNLOAD/SCAN:").upper()
+print(selection)
+if selection == "SCAN":
+    image_discov()
+    filter_and_output()
+elif selection == "DOWNLOAD":
+    def file_lengthy(fname):
+        file = open(fname, "r")
+        image_count = 0
+        for line in file:
+            if line != "\n":
+                image_count += 1
+        file.close()
+        return image_count
+
+    print("Number of Images Found: ",file_lengthy("output.txt"))
+    f_len = file_lengthy("output.txt")
+
+    urls = open('output.txt')
+    print("downloading images")
+
+    #downloading Images
+    x = 0
+    path = os.getcwd()
+    for lines in urls:
+        x = x + 1
+        img = requests.get(lines.strip('\n'))
+        img_name = "image" + str(x) + ".jpg"
+        file = open( path + "\img_out/" + img_name, "wb")
+        file.write(img.content)
+        file.close()
+        print("Downloading Image", str(x), "of", f_len )
