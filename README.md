@@ -5,6 +5,7 @@ A image scraper for the popular image sharing website "Furafinity"
 
 provide a search term and let it go.
 is able to scrape all image url's and filter them
+
 REQUIRES:
 selenium
 Chrome driver(Prefered) / Firefox driver (Untested! Not Reccommended)
