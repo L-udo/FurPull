@@ -17,7 +17,7 @@ you can find it at: https://chromedriver.chromium.org/downloads
 - You may have to adjust waiting time to allow selenium to load page in time
 
 
-Running:
+## Running:
 
 Make a folder called img_out in main folder
 
