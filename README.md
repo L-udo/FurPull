@@ -10,12 +10,11 @@ REQUIRES:
 selenium
 Chrome driver(Prefered) / Firefox driver (Untested! Not Reccommended)
 
-USAGE:
-Download Latest Chrome driver And Place it in the CWD!
-
+# - USAGE:
+- Download Latest Chrome driver And Place it in the CWD!
 you can find it at: https://chromedriver.chromium.org/downloads
 
-You may have to adjust waiting time to allow selenium to load page in time
+- You may have to adjust waiting time to allow selenium to load page in time
 
 
 Running:
