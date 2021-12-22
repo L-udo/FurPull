@@ -19,15 +19,15 @@ you can find it at: https://chromedriver.chromium.org/downloads
 
 ## Running:
 
-Make a folder called img_out in main folder
+- Make a folder called img_out in main folder
 
-Run furpull.py with python 2.7
+- Run furpull.py with python 2.7
 
-Provide furpull with Chromedriver path
+- Provide furpull with Chromedriver path
 
-Follow Steps when code runs
+- Follow Steps when code runs
 
-Away you go!
+- Away you go!
 
-all the images will be filtered and output to img_out once program finishes scraping
+- all the images will be filtered and output to img_out once program finishes scraping
 
