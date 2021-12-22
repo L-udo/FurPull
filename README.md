@@ -1,5 +1,5 @@
 # FurPull
-Furaffinity Image scraper
+## Furaffinity Image scraper
 
 A image scraper for the popular image sharing website "Furafinity"
 
